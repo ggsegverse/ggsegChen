@@ -18,83 +18,56 @@ knitr::opts_chunk$set(
 # ggsegChen <img src='man/figures/logo.png' align="right" height="138.5" />
 
 <!-- badges: start -->
-[![R build status](https://github.com/LCBC-UiO/ggsegChen/workflows/R-CMD-check/badge.svg)](https://github.com/LCBC-UiO/ggsegChen/actions)
+[![R build status](https://github.com/ggseg/ggsegChen/workflows/R-CMD-check/badge.svg)](https://github.com/ggseg/ggsegChen/actions)
 [![DOI](https://zenodo.org/badge/250277410.svg)](https://zenodo.org/badge/latestdoi/250277410)
 <!-- badges: end -->
 
-This package contains dataset for plotting the Chen thickness and areal cortical atlas ggseg and ggseg3d. 
+This package contains dataset for plotting the Chen thickness and areal cortical atlas with ggseg.
 
-Chen et al. (2013) PNAS, 110 (42) 17089-17094; [pubmed](href{https://doi.org/10.1073/pnas.1308091110)
+Chen et al. (2013) PNAS, 110 (42) 17089-17094; [DOI](https://doi.org/10.1073/pnas.1308091110)
 
 ## Installation
 
-We recommend installing the ggseg-atlases through the ggseg [r-universe](https://ggseg.r-universe.dev/ui#builds):
-
-```{r eval = FALSE}
-# Enable this universe
-options(repos = c(
-    ggseg = 'https://ggseg.r-universe.dev',
-    CRAN = 'https://cloud.r-project.org'))
-
-# Install some packages
-install.packages('ggsegChen')
-```
-
-You can install the released version of ggsegChen from [GitHub](https://github.com/) with:
+You can install ggsegChen from [GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("remotes")
-remotes::install_github("LCBC-UiO/ggsegChen")
+remotes::install_github("ggseg/ggsegChen")
 ```
 
 ## Example
 
-This is a basic example which shows you how to solve a common problem:
 ```{r}
 library(ggsegChen)
-```
-
-```{r}
 library(ggseg)
 library(ggplot2)
+```
 
-plot(chenAr) +
+```{r "chenAr"}
+ggplot() +
+  geom_brain(
+    atlas = chenAr,
+    mapping = aes(fill = label),
+    position = position_brain(hemi ~ view),
+    show.legend = FALSE
+  ) +
+  scale_fill_manual(values = chenAr$palette, na.value = "grey") +
   labs(title = "Chen areal (chenAr)") +
-  theme(legend.position = "bottom",
-        legend.text = element_text(size = 9)) +
-  guides(fill = guide_legend(ncol = 3))
+  theme_void()
 ```
-```{r fig.height = 6}
-plot(chenTh) +
+
+```{r "chenTh"}
+ggplot() +
+  geom_brain(
+    atlas = chenTh,
+    mapping = aes(fill = label),
+    position = position_brain(hemi ~ view),
+    show.legend = FALSE
+  ) +
+  scale_fill_manual(values = chenTh$palette, na.value = "grey") +
   labs(title = "Chen thickness (chenTh)") +
-  theme(legend.position = "bottom",
-        legend.text = element_text(size = 9)) +
-  guides(fill = guide_legend(ncol = 2))
+  theme_void()
 ```
-
-<!-- ```{r "noneval", eval=FALSE} -->
-<!-- library(ggseg3d) -->
-
-<!-- ggseg3d(atlas = desterieux_3d) %>%  -->
-<!--   pan_camera("right lateral") -->
-<!-- ``` -->
-
-<!-- ```{r "orca", include=FALSE} -->
-<!-- library(ggseg3d) -->
-
-<!-- p <- ggseg3d(atlas = desterieux_3d) %>% -->
-<!--   pan_camera("right lateral") %>% -->
-<!--   plotly::add_annotations( text="Screen capture", -->
-<!--                   legendtitle=TRUE, showarrow=FALSE, -->
-<!--                   font = list(color = "#000000b4", -->
-<!--                               family = 'sans serif', -->
-<!--                               size = 50)) -->
-<!-- plotly::orca(p, "man/figures/README-3d-plot.png") -->
-<!-- ``` -->
-
-<!-- ```{r "incl", echo=FALSE} -->
-<!-- knitr::include_graphics("man/figures/README-3d-plot.png") -->
-<!-- ``` -->
 
 Please note that the 'ggsegChen' project is released with a
 [Contributor Code of Conduct](CODE_OF_CONDUCT.md).
