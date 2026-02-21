@@ -1,80 +1,37 @@
-## 2d polygons ----
-
-#' Genetic topography of brain thickness morphology
+#' Chen Area Cortical Atlas
 #'
-#' @docType data
-#' @name chenTh
-#' @keywords datasets
+#' Genetic topography of brain area morphology with 12 cortical regions
+#' per hemisphere based on Chen et al. (2013).
+#'
 #' @family ggseg_atlases
 #'
-#' @references Chen et al. (2013) PNAS, 110 (42) 17089-17094;
-#' (\href{https://doi.org/10.1073/pnas.1308091110 }{PubMed})
+#' @references Chen C-H, et al. (2013).
+#'   Genetic topography of brain morphology.
+#'   *PNAS*, 110(42), 17089-17094.
+#'   \doi{10.1073/pnas.1308091110}
 #'
-#' @format A data.frame with 11341 observations and 11 variables
-#' \describe{
-#'   \item{long}{coordinates for the x-axis}
-#'   \item{lat}{coordinates for the y-axis}
-#'   \item{region}{name of region}
-#'   \item{hemi}{dummy name of the hemisphere}
-#'   \item{side}{which side to view (sagittal)}
-#'   \item{label}{label name from Freesurfer}
-#'   \item{atlas}{name of the atlas}
-#' }
-#'
+#' @return A [ggseg.formats::ggseg_atlas] object (cortical).
+#' @import ggseg.formats
+#' @export
 #' @examples
-#' data(chenTh)
-"chenTh"
+#' chenAr()
+chenAr <- function() .chenAr
 
-#' Genetic topography of brain region morphology
+#' Chen Thickness Cortical Atlas
 #'
-#' @docType data
-#' @name chenAr
-#' @keywords datasets
+#' Genetic topography of brain thickness morphology with 12 cortical
+#' regions per hemisphere based on Chen et al. (2013).
+#'
 #' @family ggseg_atlases
 #'
-#' @references Chen et al. (2013) PNAS, 110 (42) 17089-17094;
-#' (\href{https://doi.org/10.1073/pnas.1308091110 }{PubMed})
+#' @references Chen C-H, et al. (2013).
+#'   Genetic topography of brain morphology.
+#'   *PNAS*, 110(42), 17089-17094.
+#'   \doi{10.1073/pnas.1308091110}
 #'
-#' @format A data.frame with 11341 observations and 11 variables
-#' \describe{
-#'   \item{long}{coordinates for the x-axis}
-#'   \item{lat}{coordinates for the y-axis}
-#'   \item{region}{name of region}
-#'   \item{hemi}{dummy name of the hemisphere}
-#'   \item{side}{which side to view (sagittal)}
-#'   \item{label}{label name from Freesurfer}
-#'   \item{atlas}{name of the atlas}
-#' }
-#'
+#' @return A [ggseg.formats::ggseg_atlas] object (cortical).
+#' @import ggseg.formats
+#' @export
 #' @examples
-#' data(chenAr)
-"chenAr"
-
-#' ### 3d meshes ----
-#' #' Genetic topography of brain thickness morphology
-#' #'
-#' #' @docType data
-#' #' @name chenTh_3d
-#' #' @keywords datasets
-#' #' @family ggseg3d_atlases
-#' #' @references Chen et al. (2013) PNAS, 110 (42) 17089-17094;
-#' #' (\href{https://doi.org/10.1073/pnas.1308091110 }{PubMed})
-#' #'
-#' #'
-#' #' @examples
-#' #' data(chenTh_3d)
-#' "chenTh_3d"
-#'
-#' #' Genetic topography of brain region morphology
-#' #'
-#' #' @docType data
-#' #' @name chenAr_3d
-#' #' @keywords datasets
-#' #' @family ggseg3d_atlases
-#' #' @references Chen et al. (2013) PNAS, 110 (42) 17089-17094;
-#' #' (\href{https://doi.org/10.1073/pnas.1308091110 }{PubMed})
-#' #'
-#' #'
-#' #' @examples
-#' #' data(chenAr_3d)
-#' "chenAr_3d"
+#' chenTh()
+chenTh <- function() .chenTh
