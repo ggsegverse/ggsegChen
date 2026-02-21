@@ -13,8 +13,8 @@ Chen cortical atlases for the 'ggseg' ecosystem. Provides unified 'ggseg_atlas' 
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://github.com/ggseg/ggsegChen}
-  \item Report bugs at \url{https://github.com/ggseg/ggsegChen/issues}
+  \item \url{https://github.com/ggsegverse/ggsegChen}
+  \item Report bugs at \url{https://github.com/ggsegverse/ggsegChen/issues}
 }
 
 }

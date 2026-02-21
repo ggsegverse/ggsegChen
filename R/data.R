@@ -10,6 +10,7 @@
 #' \doi{10.1073/pnas.1308091110}
 #'
 #' @return A [ggseg.formats::ggseg_atlas] object (cortical).
+#' @import ggseg.formats
 #' @export
 #' @examples
 #' chenAr()
