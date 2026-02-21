@@ -46,12 +46,12 @@ library(ggplot2)
 ```{r "chenAr"}
 ggplot() +
   geom_brain(
-    atlas = chenAr,
+    atlas = chenAr(),
     mapping = aes(fill = label),
     position = position_brain(hemi ~ view),
     show.legend = FALSE
   ) +
-  scale_fill_manual(values = chenAr$palette, na.value = "grey") +
+  scale_fill_manual(values = chenAr()$palette, na.value = "grey") +
   labs(title = "Chen areal (chenAr)") +
   theme_void()
 ```
@@ -59,12 +59,12 @@ ggplot() +
 ```{r "chenTh"}
 ggplot() +
   geom_brain(
-    atlas = chenTh,
+    atlas = chenTh(),
     mapping = aes(fill = label),
     position = position_brain(hemi ~ view),
     show.legend = FALSE
   ) +
-  scale_fill_manual(values = chenTh$palette, na.value = "grey") +
+  scale_fill_manual(values = chenTh()$palette, na.value = "grey") +
   labs(title = "Chen thickness (chenTh)") +
   theme_void()
 ```

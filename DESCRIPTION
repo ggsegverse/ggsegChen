@@ -15,7 +15,6 @@ Description: Chen cortical atlases for the 'ggseg' ecosystem. Provides
     parcellations from Chen et al. (2013).
 License: MIT + file LICENSE
 Encoding: UTF-8
-LazyData: true
 Depends:
     R (>= 3.5),
     ggseg.formats
