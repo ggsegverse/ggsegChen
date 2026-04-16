@@ -1,26 +1,56 @@
-describe("chenAr atlas", {
-  it("is a ggseg_atlas", {
-    expect_s3_class(chenAr(), "ggseg_atlas")
-    expect_s3_class(chenAr(), "cortical_atlas")
-  })
+# ggseg ----
+context("test-chenAr-palettes")
+test_that("check new palettes work", {
+  expect_equal(
+    length(brain_pal("chenAr", package = "ggsegChen")), 12
+  )
 
-  it("is valid", {
-    expect_true(ggseg.formats::is_ggseg_atlas(chenAr()))
-  })
+  expect_error(brain_pal("chenAr"), "not a valid")
 
-  it("renders with ggseg", {
-    skip_if_not_installed("ggseg")
-    skip_if_not_installed("ggplot2")
-    skip_if_not_installed("vdiffr")
-    p <- ggplot2::ggplot() +
-      ggseg::geom_brain(
-        atlas = chenAr(),
-        mapping = ggplot2::aes(fill = label),
-        position = ggseg::position_brain(hemi ~ view),
-        show.legend = FALSE
-      ) +
-      ggplot2::scale_fill_manual(values = chenAr()$palette, na.value = "grey") +
-      ggplot2::theme_void()
-    vdiffr::expect_doppelganger("chenAr-2d", p)
-  })
+  expect_true(all(
+    names(brain_pal("chenAr", package = "ggsegChen")) %in%
+      brain_regions(chenAr)
+  ))
 })
+
+context("test-chenAr-ggseg-atlas")
+test_that("atlases are true ggseg atlases", {
+
+  expect_true(is_brain_atlas(chenAr))
+  expect_true(is_ggseg_atlas(as_ggseg_atlas(chenAr)))
+})
+
+context("test-chenAr-ggseg")
+test_that("Check that polygon atlases are working", {
+  expect_is(ggseg(atlas = chenAr), c("gg", "ggplot"))
+
+  expect_is(ggseg(atlas = chenAr,
+                  mapping = aes(fill = region)),
+            c("gg", "ggplot"))
+
+  expect_is(ggseg(atlas = chenAr,
+                  mapping = aes(fill = region)) +
+              scale_fill_brain("chenAr",
+                               package = "ggsegChen"),
+            c("gg", "ggplot"))
+
+  expect_is(ggseg(atlas = chenAr,
+                  mapping = aes(fill = region)) +
+              scale_fill_brain("chenAr",
+                               package = "ggsegChen"),
+            c("gg", "ggplot"))
+
+  expect_is(ggseg(atlas = chenAr,
+                  mapping = aes(fill = label),
+                  position = "stacked"),
+            c("gg", "ggplot"))
+
+  expect_is(ggseg(atlas = chenAr,
+                  mapping = aes(fill = label),
+                  adapt_scales = FALSE),
+            c("gg", "ggplot"))
+
+})
+
+
+# ggseg3d ----

@@ -6,7 +6,7 @@
 #
 # Reference: Chen CH, et al. (2012). Genetic topography of brain
 #   morphology. PNAS, 109(44):18010-18015.
-#   doi:10.1073/pnas.1210903109
+#   doi:10.1073/pnas.1210903109 # nolint: commented_code_linter.
 #
 # TODO: Obtain or regenerate .annot files from published data
 #
