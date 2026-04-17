@@ -1,33 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://lcbc-uio.github.io/ggsegChen/404.html</loc>
-  </url>
-  <url>
-    <loc>https://lcbc-uio.github.io/ggsegChen/CODE_OF_CONDUCT.html</loc>
-  </url>
-  <url>
-    <loc>https://lcbc-uio.github.io/ggsegChen/LICENSE-text.html</loc>
-  </url>
-  <url>
-    <loc>https://lcbc-uio.github.io/ggsegChen/LICENSE.html</loc>
-  </url>
-  <url>
-    <loc>https://lcbc-uio.github.io/ggsegChen/authors.html</loc>
-  </url>
-  <url>
-    <loc>https://lcbc-uio.github.io/ggsegChen/index.html</loc>
-  </url>
-  <url>
-    <loc>https://lcbc-uio.github.io/ggsegChen/news/index.html</loc>
-  </url>
-  <url>
-    <loc>https://lcbc-uio.github.io/ggsegChen/reference/chenAr.html</loc>
-  </url>
-  <url>
-    <loc>https://lcbc-uio.github.io/ggsegChen/reference/chenTh.html</loc>
-  </url>
-  <url>
-    <loc>https://lcbc-uio.github.io/ggsegChen/reference/index.html</loc>
-  </url>
+<urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
+<url><loc>https://lcbc-uio.github.io/ggsegChen/404.html</loc></url>
+<url><loc>https://lcbc-uio.github.io/ggsegChen/CODE_OF_CONDUCT.html</loc></url>
+<url><loc>https://lcbc-uio.github.io/ggsegChen/LICENSE-text.html</loc></url>
+<url><loc>https://lcbc-uio.github.io/ggsegChen/LICENSE.html</loc></url>
+<url><loc>https://lcbc-uio.github.io/ggsegChen/authors.html</loc></url>
+<url><loc>https://lcbc-uio.github.io/ggsegChen/index.html</loc></url>
+<url><loc>https://lcbc-uio.github.io/ggsegChen/news/index.html</loc></url>
+<url><loc>https://lcbc-uio.github.io/ggsegChen/reference/chenAr.html</loc></url>
+<url><loc>https://lcbc-uio.github.io/ggsegChen/reference/chenTh.html</loc></url>
+<url><loc>https://lcbc-uio.github.io/ggsegChen/reference/index.html</loc></url>
 </urlset>
+
