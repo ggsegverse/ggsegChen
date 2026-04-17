@@ -3,3 +3,12 @@
 .RData
 .Ruserdata
 docs/
+
+# Pipeline artefacts
+data-raw/**/*.ply
+data-raw/**/*.Rda
+data-raw/**/*.rds
+data-raw/**/*.rda
+data-raw/**/*.png
+data-raw/**/*.jpg
+data-raw/**/*.svg
