@@ -11,8 +11,8 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
   fig.path = "man/figures/README-",
-  fig.width = 10,
   out.width = "100%",
+  fig.width = 10,
   fig.retina = 3
 )
 ```
@@ -20,21 +20,21 @@ knitr::opts_chunk$set(
 # ggsegChen <img src='man/figures/logo.png' align="right" height="138.5" />
 
 <!-- badges: start -->
-[![DOI](https://zenodo.org/badge/250277410.svg)](https://zenodo.org/badge/latestdoi/250277410)
-[![R-CMD-check](https://github.com/ggseg/ggsegChen/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/ggseg/ggsegChen/actions/workflows/R-CMD-check.yaml)
+[![R-CMD-check](https://github.com/ggsegverse/ggsegChen/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/ggsegverse/ggsegChen/actions/workflows/R-CMD-check.yaml)
+[![r-universe](https://ggseg.r-universe.dev/badges/ggsegChen)](https://ggseg.r-universe.dev/ggsegChen)
 <!-- badges: end -->
 
-This package contains dataset for plotting the Chen thickness and areal cortical atlas with ggseg and ggseg3d.
+This package contains dataset for plotting the Chen thickness and areal cortical
+atlas with ggseg.
 
-Chen et al. (2013) PNAS, 110 (42) 17089-17094; [pubmed](https://doi.org/10.1073/pnas.1308091110)
-
-To learn how to use these atlases, please look at the documentation for
-[ggseg](https://ggseg.github.io/ggseg/) and
-[ggseg3d](https://ggseg.github.io/ggseg3d).
+Chen CH, Gutierrez ED, Thompson W, Panizzon MS, Jernigan TL, Eyler LT, ...
+& Dale AM (2012). Hierarchical genetic organization of human cortical surface
+area. *Science*, 335(6076), 1634-1636.
 
 ## Installation
 
-We recommend installing the ggseg-atlases through the ggseg [r-universe](https://ggseg.r-universe.dev/ui#builds):
+We recommend installing the ggseg-atlases through the ggseg
+[r-universe](https://ggseg.r-universe.dev/ui#builds):
 
 ```{r}
 #| label: install-r-universe
@@ -47,17 +47,17 @@ options(repos = c(
 install.packages("ggsegChen")
 ```
 
-You can install the released version of ggsegChen from [GitHub](https://github.com/) with:
+You can install this package from [GitHub](https://github.com/) with:
 
 ```r
-# install.packages("remotes")
-remotes::install_github("ggseg/ggsegChen")
+# install.packages("pak")
+pak::pak("ggsegverse/ggsegChen")
 ```
 
-## Chen Areal Atlas
+## Areal atlas
 
 ```{r}
-#| label: 2d-areal
+#| label: chenAr
 library(ggseg)
 library(ggsegChen)
 library(ggplot2)
@@ -70,14 +70,13 @@ ggplot() +
     show.legend = FALSE
   ) +
   scale_fill_manual(values = chenAr()$palette, na.value = "grey") +
-  theme_void() +
-  ggtitle("Chen Areal Atlas")
+  theme_void()
 ```
 
-## Chen Thickness Atlas
+## Thickness atlas
 
 ```{r}
-#| label: 2d-thickness
+#| label: chenTh
 #| fig-height: 6
 ggplot() +
   geom_brain(
@@ -87,10 +86,11 @@ ggplot() +
     show.legend = FALSE
   ) +
   scale_fill_manual(values = chenTh()$palette, na.value = "grey") +
-  theme_void() +
-  ggtitle("Chen Thickness Atlas")
+  theme_void()
 ```
 
-Please note that the 'ggsegChen' project is released with a
-[Contributor Code of Conduct](CODE_OF_CONDUCT.md).
-By contributing to this project, you agree to abide by its terms.
+## Data source
+
+Chen CH, Gutierrez ED, Thompson W, Panizzon MS, Jernigan TL, Eyler LT, ...
+& Dale AM (2012). Hierarchical genetic organization of human cortical surface
+area. *Science*, 335(6076), 1634-1636.
