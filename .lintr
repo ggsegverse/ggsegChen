@@ -1,1 +1,6 @@
-exclusions: list("data-raw")
+exclusions: list(
+    "data-raw",
+    "R/chen.R" = list(
+      object_name_linter = Inf
+    )
+  )
