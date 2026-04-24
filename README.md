@@ -43,17 +43,8 @@ pak::pak("ggsegverse/ggsegChen")
 ``` r
 library(ggseg)
 library(ggsegChen)
-library(ggplot2)
 
-ggplot() +
-  geom_brain(
-    atlas = chenAr(),
-    mapping = aes(fill = label),
-    position = position_brain(hemi ~ view),
-    show.legend = FALSE
-  ) +
-  scale_fill_manual(values = chenAr()$palette, na.value = "grey") +
-  theme_void()
+plot(chenAr())
 ```
 
 <img src="man/figures/README-chenAr-1.png" style="width:100.0%" />
@@ -61,15 +52,7 @@ ggplot() +
 ## Thickness atlas
 
 ``` r
-ggplot() +
-  geom_brain(
-    atlas = chenTh(),
-    mapping = aes(fill = label),
-    position = position_brain(hemi ~ view),
-    show.legend = FALSE
-  ) +
-  scale_fill_manual(values = chenTh()$palette, na.value = "grey") +
-  theme_void()
+plot(chenTh())
 ```
 
 <img src="man/figures/README-chenTh-1.png" style="width:100.0%" />

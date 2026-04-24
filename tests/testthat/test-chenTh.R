@@ -1,57 +1,26 @@
-# ggseg ----
+describe("chenTh atlas", {
+  it("is a ggseg_atlas", {
+    expect_s3_class(chenTh(), "ggseg_atlas")
+    expect_s3_class(chenTh(), "cortical_atlas")
+  })
 
-context("test-chenTh-palettes")
-test_that("check new palettes work", {
-  expect_equal(
-    length(brain_pal("chenTh", package = "ggsegChen")), 12
-  )
+  it("is valid", {
+    expect_true(ggseg.formats::is_ggseg_atlas(chenTh()))
+  })
 
-  expect_error(brain_pal("chenTh"), "not a valid")
-
-  expect_true(all(
-    names(brain_pal("chenTh", package = "ggsegChen")) %in%
-      brain_regions(chenTh)
-  ))
+  it("renders with ggseg", {
+    p <- ggplot2::ggplot() +
+      ggseg::geom_brain(
+        atlas = chenTh(),
+        mapping = ggplot2::aes(fill = label),
+        position = ggseg::position_brain(hemi ~ view),
+        show.legend = FALSE
+      ) +
+      ggplot2::scale_fill_manual(
+        values = chenTh()$palette,
+        na.value = "grey"
+      ) +
+      ggplot2::theme_void()
+    vdiffr::expect_doppelganger("chenth-2d", p)
+  })
 })
-
-context("test-chenTh-ggseg-atlas")
-test_that("atlases are true ggseg atlases", {
-  expect_true(is_brain_atlas(chenTh))
-  expect_true(is_ggseg_atlas(as_ggseg_atlas(chenTh)))
-
-})
-
-context("test-chenTh-ggseg")
-test_that("Check that polygon atlases are working", {
-  expect_is(ggseg(atlas = chenTh), c("gg", "ggplot"))
-
-  expect_is(ggseg(atlas = chenTh,
-                  mapping = aes(fill = region)),
-            c("gg", "ggplot"))
-
-  expect_is(ggseg(atlas = chenTh,
-                  mapping = aes(fill = region)) +
-              scale_fill_brain("chenTh",
-                               package = "ggsegChen"),
-            c("gg", "ggplot"))
-
-  expect_is(ggseg(atlas = chenTh,
-                  mapping = aes(fill = region)) +
-              scale_fill_brain("chenTh",
-                               package = "ggsegChen"),
-            c("gg", "ggplot"))
-
-  expect_is(ggseg(atlas = chenTh,
-                  mapping = aes(fill = label),
-                  position = "stacked"),
-            c("gg", "ggplot"))
-
-  expect_is(ggseg(atlas = chenTh,
-                  mapping = aes(fill = label),
-                  adapt_scales = FALSE),
-            c("gg", "ggplot"))
-
-})
-
-
-# ggseg3d ----

@@ -60,17 +60,8 @@ pak::pak("ggsegverse/ggsegChen")
 #| label: chenAr
 library(ggseg)
 library(ggsegChen)
-library(ggplot2)
 
-ggplot() +
-  geom_brain(
-    atlas = chenAr(),
-    mapping = aes(fill = label),
-    position = position_brain(hemi ~ view),
-    show.legend = FALSE
-  ) +
-  scale_fill_manual(values = chenAr()$palette, na.value = "grey") +
-  theme_void()
+plot(chenAr())
 ```
 
 ## Thickness atlas
@@ -78,15 +69,7 @@ ggplot() +
 ```{r}
 #| label: chenTh
 #| fig-height: 6
-ggplot() +
-  geom_brain(
-    atlas = chenTh(),
-    mapping = aes(fill = label),
-    position = position_brain(hemi ~ view),
-    show.legend = FALSE
-  ) +
-  scale_fill_manual(values = chenTh()$palette, na.value = "grey") +
-  theme_void()
+plot(chenTh())
 ```
 
 ## Data source
