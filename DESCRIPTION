@@ -14,8 +14,10 @@ Description: This is a support package for the ggseg, and ggseg3d packages.
 License: MIT + file LICENSE
 Encoding: UTF-8
 RoxygenNote: 7.1.1
-Depends: 
+Depends:
     R (>= 3.5)
+Imports:
+    ggseg.formats
 LazyData: true
 Suggests:
     ggseg,
