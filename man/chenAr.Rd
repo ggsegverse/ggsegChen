@@ -25,5 +25,9 @@ Chen C-H, et al. (2013).
 \seealso{
 Other ggseg_atlases: 
 \code{\link{chenTh}()}
+
+Other cortical_atlases: 
+\code{\link{chenTh}()}
 }
+\concept{cortical_atlases}
 \concept{ggseg_atlases}

@@ -4,6 +4,7 @@
 #' per hemisphere based on Chen et al. (2013).
 #'
 #' @family ggseg_atlases
+#' @family cortical_atlases
 #'
 #' @references Chen C-H, et al. (2013).
 #'   Genetic topography of brain morphology.
@@ -23,6 +24,7 @@ chenAr <- function() .chenAr
 #' regions per hemisphere based on Chen et al. (2013).
 #'
 #' @family ggseg_atlases
+#' @family cortical_atlases
 #'
 #' @references Chen C-H, et al. (2013).
 #'   Genetic topography of brain morphology.
