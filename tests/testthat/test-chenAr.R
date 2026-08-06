@@ -9,18 +9,9 @@ describe("chenAr atlas", {
   })
 
   it("renders with ggseg", {
-    p <- ggplot2::ggplot() +
-      ggseg::geom_brain(
-        atlas = chenAr(),
-        mapping = ggplot2::aes(fill = label),
-        position = ggseg::position_brain(hemi ~ view),
-        show.legend = FALSE
-      ) +
-      ggplot2::scale_fill_manual(
-        values = chenAr()$palette,
-        na.value = "grey"
-      ) +
-      ggplot2::theme_void()
-    vdiffr::expect_doppelganger("chenar-2d", p)
+    vdiffr::expect_doppelganger(
+      "chenar-2d",
+      ggseg::brain_test_plot(chenAr())
+    )
   })
 })

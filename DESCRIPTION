@@ -30,6 +30,8 @@ Suggests:
     testthat (>= 3.0.0),
     vdiffr,
     devtools
+Remotes:
+    ggsegverse/ggseg
 Config/testthat/edition: 3
 VignetteBuilder: knitr
 URL: https://github.com/LCBC-UiO/ggsegChen
